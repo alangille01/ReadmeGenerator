@@ -1,7 +1,7 @@
 
 // Function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
-  if (!license) return '';
+  if (!license || license === 'None') return '';
   const badges = {
     'MIT': '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)',
     'Apache 2.0': '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)',
@@ -14,7 +14,7 @@ function renderLicenseBadge(license) {
 // Function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (!license) return '';
+  if (!license || license === 'None') return '';
   const links = {
     'MIT': 'https://opensource.org/licenses/MIT',
     'Apache 2.0': 'https://opensource.org/licenses/Apache-2.0',
@@ -26,7 +26,7 @@ function renderLicenseLink(license) {
 
 // Function that returns the license section of README
 function renderLicenseSection(license) {
-  if (!license) return '';
+  if (!license || license === 'None') return '';
   return `## License
 
 This project is licensed under the ${license} license. For more information, please visit [this link](${renderLicenseLink(license)}).
